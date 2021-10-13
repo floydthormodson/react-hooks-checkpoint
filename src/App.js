@@ -64,18 +64,19 @@ function App() {
         <Card className="card" id="0">
           <CardMedia />
           <CardContent className="card">
-            <button onClick={()=> setCurrentProduct(1)}>See More</button><br />
             {productList[0]?.name}<br />
             <DisplayContent currentProduct={currentProduct} selector = {1}
             name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
             <img src={currentProduct === 1? currentImage: ''}/>
-            
+            <button onClick={()=> setCurrentProduct(1)}>See More</button><br />
           </CardContent>
         </Card>
         <Card className="card" id="1">
             <CardMedia />
             <CardContent className="card">
               {productList[1]?.name}<br />
+              <DisplayContent currentProduct={currentProduct} selector = {2}
+            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
               <img src={currentProduct === 2? currentImage: ''}/>
               <button onClick={(e)=> setCurrentProduct(2)}>See More</button>
             </CardContent>
@@ -84,6 +85,8 @@ function App() {
             <CardMedia src={currentImage}/>
             <CardContent className="card">
               {productList[2]?.name}<br />
+              <DisplayContent currentProduct={currentProduct} selector = {3}
+            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
               <img src={currentProduct === 3? currentImage: ''}/>
               <button onClick={(e)=> setCurrentProduct(3)}>See More</button>
             </CardContent>
@@ -92,6 +95,8 @@ function App() {
             <CardMedia />
             <CardContent className="card">
               {productList[3]?.name}<br />
+              <DisplayContent currentProduct={currentProduct} selector = {4}
+            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
               <img src={currentProduct === 4? currentImage: ''}/>
               <button onClick={(e)=> setCurrentProduct(4)}>See More</button>
             </CardContent><br/>
@@ -100,6 +105,8 @@ function App() {
             <CardMedia />
             <CardContent className="card">
               {productList[4]?.name}<br />
+              <DisplayContent currentProduct={currentProduct} selector = {5}
+            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
               <img src={currentProduct === 5? currentImage: ''}/>
               <button onClick={(e)=> setCurrentProduct(5)}>See More</button>
             </CardContent>
