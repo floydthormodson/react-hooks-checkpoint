@@ -4,7 +4,7 @@ export default function DisplayContent({currentProduct, selector, slogan, catego
         output = <div>
                     {slogan}<br />
                     {category}<br />
-                    {price}<br />
+                    ${price}<br />
                 </div>;
     }
     return output;
