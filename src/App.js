@@ -7,7 +7,7 @@ import DisplayContent from "./DisplayContent.js";
 function App() {
 
   const [productList, setProductList] = useState([]);
-  const [currentProduct, setCurrentProduct] = useState("0");
+  const [currentProduct, setCurrentProduct] = useState("1");
   const [currentName, setCurrentName] =useState('');
   const [currentSlogan, setCurrentSlogan] = useState('');
   const [currentCategory, setCurrentCategory] =useState('');
