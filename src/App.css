@@ -7,8 +7,8 @@
 }
 
 img{
-  height: 30vh;
-  width:auto;
+  max-height:30vh;
+  max-width:20vw;
 }
 
 .App-header {

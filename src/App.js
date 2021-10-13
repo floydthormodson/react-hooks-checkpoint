@@ -6,13 +6,14 @@ import DisplayContent from "./DisplayContent.js";
 
 function App() {
 
-  const [productList, setProductList] = useState([])
+  const [productList, setProductList] = useState([]);
   const [currentProduct, setCurrentProduct] = useState("0");
   const [currentName, setCurrentName] =useState('');
   const [currentSlogan, setCurrentSlogan] = useState('');
   const [currentCategory, setCurrentCategory] =useState('');
   const [currentPrice, setCurrentPrice]=useState('');
-  const [currentImage, setCurrentImage] =useState('')
+  const [currentImage, setCurrentImage] =useState('');
+  const [toggle, setToggle] =useState(false);
 
   
   useEffect(() =>{
@@ -46,29 +47,22 @@ function App() {
     callImage();
   }, [currentProduct]);
 
-  console.log(currentProduct)
+
   return (
     <div className="App">
       <div className="app-title flex-column">
         <h1>React Hooks Checkpoint</h1>
       </div>
       <div className="Card-Section">
-        <Card class="card" id="main-display">
-          You are currently Viewing:<br /> 
-          {currentName}<br />
-          {currentSlogan}<br />
-          {currentCategory}<br />
-          {currentPrice}<br />
-          <img src={currentImage}/>
-        </Card>
         <Card className="card" id="0">
           <CardMedia />
           <CardContent className="card">
             {productList[0]?.name}<br />
             <DisplayContent currentProduct={currentProduct} selector = {1}
-            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
-            <img src={currentProduct === 1? currentImage: ''}/>
-            <button onClick={()=> setCurrentProduct(1)}>See More</button><br />
+              name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}
+            />
+            <img src={currentProduct === 1 && toggle? currentImage: ''}/>
+            <button onClick={()=> setCurrentProduct(1), setToggle(!toggle)}>See More</button><br />
           </CardContent>
         </Card>
         <Card className="card" id="1">
@@ -76,9 +70,10 @@ function App() {
             <CardContent className="card">
               {productList[1]?.name}<br />
               <DisplayContent currentProduct={currentProduct} selector = {2}
-            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
-              <img src={currentProduct === 2? currentImage: ''}/>
-              <button onClick={(e)=> setCurrentProduct(2)}>See More</button>
+                name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}
+              />
+              <img src={currentProduct === 2 && toggle? currentImage: ''}/>
+              <button onClick={(e)=> setCurrentProduct(2), setToggle(!toggle)}>See More</button>
             </CardContent>
         </Card>
         <Card className="card" id="2">
@@ -86,9 +81,10 @@ function App() {
             <CardContent className="card">
               {productList[2]?.name}<br />
               <DisplayContent currentProduct={currentProduct} selector = {3}
-            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
-              <img src={currentProduct === 3? currentImage: ''}/>
-              <button onClick={(e)=> setCurrentProduct(3)}>See More</button>
+                name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}
+              />
+              <img src={currentProduct === 3 && toggle? currentImage: ''}/>
+              <button onClick={(e)=> setCurrentProduct(3), setToggle(!toggle)}>See More</button>
             </CardContent>
         </Card>
         <Card className="card" id="3">
@@ -96,9 +92,10 @@ function App() {
             <CardContent className="card">
               {productList[3]?.name}<br />
               <DisplayContent currentProduct={currentProduct} selector = {4}
-            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
-              <img src={currentProduct === 4? currentImage: ''}/>
-              <button onClick={(e)=> setCurrentProduct(4)}>See More</button>
+                name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}
+              />
+              <img src={currentProduct === 4 && toggle? currentImage: ''}/>
+              <button onClick={(e)=> setCurrentProduct(4), setToggle(!toggle)}>See More</button>
             </CardContent><br/>
         </Card>
         <Card className="card" id="4">
@@ -106,9 +103,10 @@ function App() {
             <CardContent className="card">
               {productList[4]?.name}<br />
               <DisplayContent currentProduct={currentProduct} selector = {5}
-            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
-              <img src={currentProduct === 5? currentImage: ''}/>
-              <button onClick={(e)=> setCurrentProduct(5)}>See More</button>
+                name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}
+              />
+              <img src={currentProduct === 5 && toggle? currentImage: ''}/>
+              <button onClick={(e)=> setCurrentProduct(5), setToggle(!toggle)}>See More</button>
             </CardContent>
         </Card>
       </div>
