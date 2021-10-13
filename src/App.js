@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import './App.css';
 import {Card,CardContent,CardMedia,} from '@material-ui/core';
+import DisplayContent from "./DisplayContent.js";
 
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
   const [currentPrice, setCurrentPrice]=useState('');
   const [currentImage, setCurrentImage] =useState('')
 
-  
   
   useEffect(() =>{
     async function callProductList(){
@@ -46,6 +46,7 @@ function App() {
     callImage();
   }, [currentProduct]);
 
+  console.log(currentProduct)
   return (
     <div className="App">
       <div className="app-title flex-column">
@@ -63,9 +64,12 @@ function App() {
         <Card className="card" id="0">
           <CardMedia />
           <CardContent className="card">
+            <button onClick={()=> setCurrentProduct(1)}>See More</button><br />
             {productList[0]?.name}<br />
+            <DisplayContent currentProduct={currentProduct} selector = {1}
+            name={currentName} slogan={currentSlogan} category={currentCategory} price={currentPrice}/>
             <img src={currentProduct === 1? currentImage: ''}/>
-            <button onClick={()=> setCurrentProduct(1)}>See More</button>
+            
           </CardContent>
         </Card>
         <Card className="card" id="1">
